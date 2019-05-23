@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Redefining the Latte Factor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Redefining the Latte Factor</h1>
+        <p class="heading-text">Is That Starbucks Drink Worth It?</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well" id="item">
+          <h5>Select the Starbucks Menu Item That's Tempting You:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="well" id="weight">
+          <h5>About how much do you weigh? Be honest, now.</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+
+        <div class="well" id="calories">
+          <h5>How many calories are you hoping to ingest today?</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+
+      <div class="col-md-5">
+        <div id="ingredient-viz"></div>
+        <div id="calories-viz"></div>
+      </div>
+
+
+      <div class="col-md-5">
+        <div id="aster-plot"></div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="lollipop"></div>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.jumbotron {
+    background-image: url("../images/starbucks_cups.jpg");
+    background-size: cover;
+    /* opacity: 0.5; */
+    font-weight: bold;
+    font-family: "Tahoma", Geneva, sans-serif;
+  }
+
+  /* .subheader {
+    font-size: 40;
+  } */
+.heading-text {
+  font-size: 40;
+  font-weight: bold;
+  font-style: italic;
+  text-indent: 400px;
+}
+
+.well {
+  border: 2px solid rgb(28, 96, 62);
+  background: rgb(250, 255, 239);
+}
+
+/* #item {
+
+}
+
+#weight {
+
+}
+
+#calories {
+
+} */

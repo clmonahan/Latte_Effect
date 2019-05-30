@@ -1,3 +1,9 @@
+// Use the popper library to add poppers to various page elements
+// https://popper.js.org/
+
+// Or use premonish to guide people to the information we need next
+// https://mathisonian.github.io/premonish/
+
 // Food item dropdown
   // Pulls from full menu csv
   // Use .well and #item
@@ -10,13 +16,13 @@
   // Start with 1000 calories and end with 3200 by 100s
   // Use .well and #calorie
 
-// Nutrition word cloud
-  // Pulls from full menu csv
-  // Use #ingredients-viz section
-
 // Calorie reader
   // Pulls from full menu csv
   // Use #calories-viz
+
+// Nutrition word cloud
+  // Pulls from full menu csv
+  // Use #words-viz section
 
 // Nutrition aster plot
   // Pulls from full menu csv

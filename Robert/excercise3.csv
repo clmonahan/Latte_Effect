@@ -1,0 +1,64 @@
+﻿Exercise,100,125,150,175,200,250,300
+Aerobics: low impact,114,91,76,65,57,45,38
+Aerobics: high impact,89,71,60,51,45,36,30
+"Aerobics, Step: low impact",89,71,60,51,45,36,30
+"Aerobics, Step: high impact",63,50,42,36,31,25,21
+Aerobics: water,156,125,104,89,78,63,52
+"Bicycling, Stationary: moderate",89,71,60,51,45,36,30
+"Bicycling, Stationary: vigorous",60,48,40,34,30,24,20
+Circuit Training,78,63,52,45,39,31,26
+"Rowing, Stationary: moderate",89,71,60,51,45,36,30
+"Rowing, Stationary: vigorous",74,59,49,42,37,29,25
+Ski Machine,66,53,44,38,33,26,22
+Stair Stepper,104,83,69,60,52,42,35
+Weight Lifting: light,208,167,139,119,104,83,69
+Weight Lifting: vigorous,104,83,69,60,52,42,35
+Basketball: playing a game,78,63,52,45,39,31,26
+Basketball: wheelchair,86,77,64,55,48,38,32
+Bicycling: BMX or mountain,74,59,49,42,37,29,25
+Bicycling: 12-13.9ph,78,63,52,45,39,31,26
+Bicycling: 14-15.9ph,63,50,42,36,31,25,21
+Boxing: sparring,69,56,46,40,35,28,23
+Football: competitive,69,56,46,40,35,28,23
+Football: touch or flag,78,63,52,45,39,31,26
+Frisbee,208,167,139,119,104,83,69
+Golf: carrying clubs,114,91,76,65,57,45,38
+Golf: using cart,179,143,119,102,99,71,60
+Gymnastics,156,125,104,89,78,63,52
+Handball,52,42,35,30,26,21,17
+Hiking: cross-country,104,83,69,60,52,42,35
+Horseback Riding,156,125,104,89,78,63,52
+Ice Skating,89,71,60,51,45,36,30
+Martial Arts,63,50,42,36,31,25,21
+Racquetball: competitive,63,50,42,36,31,25,21
+Racquetball: casual,89,71,60,51,45,36,30
+Rock Climbing: ascending,57,45,38,32,28,23,19
+Rock Climbing: rapelling,78,63,52,45,39,31,26
+Rollerblade (inline) Skating,89,171,60,51,45,36,30
+Rope Jumping,63,50,42,36,31,25,21
+Running: 5ph (12min/mile),78,63,52,45,39,31,26
+Running: 5.2ph (11.5min/mile),69,56,46,40,35,28,23
+Running: 6ph (10min/mile),63,50,42,36,31,25,21
+Running: 6.7ph (9min/mile),57,45,38,32,28,23,19
+Running: 7.5ph (8min/mile),50,40,33,29,25,20,17
+Running: 8.6ph (7min/mile),43,34,29,25,22,17,14
+Running: 10ph (6min/mile),38,30,25,22,19,15,13
+Running: pushing wheelchair,78,63,52,45,39,31,26
+Running: cross-country,69,56,46,40,35,28,23
+Skiing: cross-country,78,63,52,45,39,31,26
+Skiing: downhill,104,83,69,60,52,42,35
+Snow Shoeing,78,63,52,45,39,31,26
+Softball: general play,125,100,83,71,63,50,42
+Swimming: general,104,83,69,60,52,42,35
+Tennis: general,89,71,60,51,45,36,30
+Volleyball: non-competitive,208,167,139,119,104,83,69
+Volleyball: competitive,156,125,104,89,78,63,52
+Volleyball: beach,78,63,52,45,39,31,26
+Walk: 3.5ph (17min/mile),156,125,104,89,78,63,52
+Walk: 4ph (15min/mile),139,111,93,79,69,56,46
+Walk: 4.5ph (13min/mile),125,100,83,71,63,50,42
+Walk/Jog: jog <10min.,104,83,69,60,52,42,35
+Water Skiing,104,83,69,60,52,42,35
+Water Polo,89,71,60,51,45,36,30
+"Whitewater: rafting, kayaking",89,71,60,51,45,36,30
+Exercise,100 lbs,125 lbs,150 lbs,175 lbs,200 lbs,250 lbs,300 lbs

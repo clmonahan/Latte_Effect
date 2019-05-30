@@ -1,4 +1,4 @@
-# Latte_Effect
+## Note: This is an unfinished project and is being updated.
 
 # Redefining the Latte Factor
 ## Is That Starbucks Drink Worth It?

@@ -7,33 +7,37 @@
 // Food item dropdown
   // Pulls from full menu csv
   // Use .well and #item
-// function menuItem() {
-//   // d3.json('/data', function(my_data, error))
-//   // d3.csv("../Starbucks/starbucks_drinkMenu_expanded.csv", function(error, data) {
-//     var menuOption = d3.select(.well).selectAll("#item").data(data).enter();
-
-//     dataEnter.append("span").html(function(d) {
-//       return d["Beverage"] + ": " + d["Beverage_prep"]
-//     });
-
-//     select
-//       .on("change", function(d) {
-//         var value = d3.select(this).property("Beverage");
-//         alert(value);
-//       });
-
-//     select.selectAll("menuOption")
-//       .data(data)
-//       .enter()
-//         .append("menuOption")
-//         .attr("value", function (d) { return d.value; })
-//         .text(function (d) { return d.label; });
-//   });
-// };
+function init() {
+  // Grab a reference to the dropdown select element "#item"
+  var selector = d3.select("#selDatasetItem");
+  
+  // Use the list of sample names to populate the select options
+  d3.json("/macros").then((foodNames) => {
+    var items = Object.keys(foodNames)
+    items.forEach((food) => {
+      console.log(food)
+      selector
+        .append("option")
+        .text(food)
+        .property("value", food);
+    });
+  
+    // Use the first sample from the list to build the initial plots
+    const firstFood = foodNames[0];
+    buildCharts(firstFood);
+    buildMetadata(firstFood);
+  });
+};
+console.log('this prints')
+init();
 
 // Current weight dropdown
   // Pulls from exercise csv
   // Use .well and #weight
+
+
+
+
 
 // Daily calorie dropdown
   // Start with 1000 calories and end with 3200 by 100s

@@ -7,6 +7,29 @@
 // Food item dropdown
   // Pulls from full menu csv
   // Use .well and #item
+// function menuItem() {
+//   // d3.json('/data', function(my_data, error))
+//   // d3.csv("../Starbucks/starbucks_drinkMenu_expanded.csv", function(error, data) {
+//     var menuOption = d3.select(.well).selectAll("#item").data(data).enter();
+
+//     dataEnter.append("span").html(function(d) {
+//       return d["Beverage"] + ": " + d["Beverage_prep"]
+//     });
+
+//     select
+//       .on("change", function(d) {
+//         var value = d3.select(this).property("Beverage");
+//         alert(value);
+//       });
+
+//     select.selectAll("menuOption")
+//       .data(data)
+//       .enter()
+//         .append("menuOption")
+//         .attr("value", function (d) { return d.value; })
+//         .text(function (d) { return d.label; });
+//   });
+// };
 
 // Current weight dropdown
   // Pulls from exercise csv

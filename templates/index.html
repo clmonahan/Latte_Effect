@@ -7,14 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Redefining the Latte Factor</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 
 <body>
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="col-md-12 jumbotron text-center" style="background-image: url(./static/starbucks_cups.jpg); background-size: cover;">
         <h1>Redefining the Latte Factor</h1>
         <p class="heading-text">Is That Starbucks Drink Worth It?</p>
       </div>
@@ -55,7 +56,8 @@
   <script src="https://d3js.org/d3.v4.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='../static/app.js') }}"></script> -->
+
 
 </body>
 

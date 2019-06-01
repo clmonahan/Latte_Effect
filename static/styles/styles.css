@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("../images/starbucks_cups.jpg");
+    background-image: url("./static/starbucks_cups.jpg");
     background-size: cover;
     /* opacity: 0.5; */
     font-weight: bold;

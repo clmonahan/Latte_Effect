@@ -1,11 +1,11 @@
 .jumbotron {
-    background-image: url("./static/starbucks_cups.jpg");
+    background-image: url("../starbucks_cups.jpg");
     background-size: cover;
     /* opacity: 0.5; */
     font-weight: bold;
     font-family: "Tahoma", Geneva, sans-serif;
   }
-
+  
   /* .subheader {
     font-size: 40;
   } */
@@ -17,8 +17,10 @@
 }
 
 .well {
-  border: 2px solid rgb(28, 96, 62);
-  background: rgb(250, 255, 239);
+  border: 3px solid #036635;
+  /* border: 2px solid rgb(28, 96, 62); */
+  background-color: #f7f7f7;
+  /* background: rgb(250, 255, 239); */
 }
 
 /* #item {

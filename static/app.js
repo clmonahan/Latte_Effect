@@ -15,7 +15,7 @@ function init() {
   d3.json("/macros").then((foodNames) => {
     var items = Object.keys(foodNames)
     items.forEach((food) => {
-      console.log(food)
+      // console.log(food)
       selector
         .append("option")
         .text(food)
@@ -24,24 +24,73 @@ function init() {
   
     // Use the first sample from the list to build the initial plots
     const firstFood = foodNames[0];
-    buildCharts(firstFood);
-    buildMetadata(firstFood);
+    // buildCharts(firstFood);
+    // buildMetadata(firstFood);
   });
 };
-console.log('this prints')
 init();
 
 // Current weight dropdown
   // Pulls from exercise csv
   // Use .well and #weight
 
+  // function init2() {
+  //   // Grab a reference to the dropdown select element "#item"
+  //   var selector = d3.select("#selDatasetWeight");
+    
+  //   // Use the list of sample names to populate the select options
+  //   d3.json("/exercise").then((foodNames) => {
+  //     var items = Object.keys(foodNames)
+  //     items.forEach((food) => {
+  //       // console.log(food)
+  //       selector
+  //         .append("option")
+  //         .text(food)
+  //         .property("value", food);
+  //     });
+    
+  //     // Use the first sample from the list to build the initial plots
+  //     const firstFood = foodNames[0];
+  //     // buildCharts(firstFood);
+  //     // buildMetadata(firstFood);
+  //   });
+  // };
+  // init2();
 
+
+var weight = ["100", "125", "150", "175", "200", "250", "300"];
+  
+function init2w(array) {
+  console.log('hello')
+  var selector = d3.select('#selDatasetWeight')
+  weight.forEach(w => {
+    selector
+      .append("option")
+      .text(w)
+      .property("value", w);
+  });
+};
+init2w(weight);
 
 
 
 // Daily calorie dropdown
   // Start with 1000 calories and end with 3200 by 100s
   // Use .well and #calorie
+
+  var calories = ["1000", "1250", "1500", "1750", "2000", "2500", "3000"];
+  
+  function init3c(array) {
+    var selector = d3.select('#selDatasetCalories')
+    calories.forEach(c => {
+      selector
+        .append("option")
+        .text(c)
+        .property("value", c);
+    });
+  };
+  init3c(calories);
+
 
 // Calorie reader
   // Pulls from full menu csv

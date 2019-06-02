@@ -23,6 +23,16 @@
   /* background: rgb(250, 255, 239); */
 }
 
+.liquidFillGaugeText { 
+  font-family: Helvetica; 
+  font-weight: bold; 
+}
+
+.px-2 {
+  padding-left: ($spacer-x * .5) !important;
+  padding-right: ($spacer-x * .5) !important;
+}
+
 /* #item {
 
 }

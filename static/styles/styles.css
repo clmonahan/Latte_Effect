@@ -21,6 +21,8 @@
   /* border: 2px solid rgb(28, 96, 62); */
   background-color: #f7f7f7;
   /* background: rgb(250, 255, 239); */
+  padding-left: ($spacer-x * .5) !important;
+  padding-right: ($spacer-x * .5) !important;
 }
 
 .liquidFillGaugeText { 
@@ -32,6 +34,25 @@
   padding-left: ($spacer-x * .5) !important;
   padding-right: ($spacer-x * .5) !important;
 }
+
+.svg-container {
+  width: 540px;
+  height: 355px;
+}
+
+.js-plotly-plot {
+  width: 540px;
+  height: 355px;
+}
+
+/* .plotly div {
+  direction: ltr;
+  font-family: "Open Sans", verdana, arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 
 /* #item {
 

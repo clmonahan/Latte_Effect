@@ -7,6 +7,8 @@ from sqlalchemy import create_engine
 # from flask.ext.sqlalchemy import sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
 from secrets import username, password
+# import plotly.plotly as py
+# import plotly.graph_objs as go
 
 pymysql.install_as_MySQLdb()
 

@@ -62,8 +62,8 @@ function buildCharts(sample) {
     //  @TODO: Build a Pie Chart
     var canvas = d3.select("#pie")
       .append("svg:svg")
-      .attr("width", 250)//canvasWidth)
-      .attr("height", 250);//canvasHeight);
+      .attr("width", 300)//canvasWidth)
+      .attr("height", 300);//canvasHeight);
 
 
     var data = [{
@@ -72,7 +72,35 @@ function buildCharts(sample) {
       type: 'pie',
     }];
 
-    console.log(data)
+    // var data = [{
+    //   values: nutriValue.slice(0, 4),
+    //   labels: nutriKey.slice(0, 4),
+    //   type: 'sunburst',
+    //   outsidetextfont: {size: 20, color: "#377eb8"},
+    //   leaf: {opacity: 0.4},
+    //   marker: {line: {width: 2}}
+    // }];
+
+    // var layout = {
+    //   margin: {l:0, r:0, b:0, t:0},
+    //   // width: 500,
+    //   // height: 500
+    //   showlegend: true,
+    // };
+
+    // Plotly.newPlot('pie', data, layout);
+
+    // console.log(data)
+    
+    
+    
+    
+    // layout = go.Layout(
+    //   legend=dict(orientation="h")
+    // )
+    // fig = go.Figure(data=data, layout=layout)
+    
+    // py.iplot(fig, filename='horizontal-legend')
 
     var layout = {
       showlegend: true,

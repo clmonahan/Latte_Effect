@@ -35,10 +35,15 @@ function init3c(array) {
 };
 init3c(calories);
 
+var goal = document.getElementById('selDatasetCalories').value
+document.getElementById('selDatasetCalories').addEventListener('change', function(){
+  goal = this.value
+  console.log(goal)
+})
 function buildBar(sample) {
   
-  var goal = document.getElementById('selDatasetCalories').value
-
+  
+    console.log(goal)
   // @TODO: Use `d3.json` to fetch the sample data for the plots
   var chartsURL = "/macros";
   d3.json(chartsURL).then(function (data) {
@@ -175,9 +180,9 @@ function buildBar(sample) {
   function weightOptionChanged(newSample) {
   }
 
-  function calOptionChanged(newSample) {
-    buildBar(newSample);
-  }
+  // function calOptionChanged(newSample) {
+  //   buildBar(newSample);
+  // }
 
 
 init();

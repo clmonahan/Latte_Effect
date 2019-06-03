@@ -40,7 +40,7 @@
       <div class="col-md-6">
         <div class="well">
           <h5>About how much do you weigh? Be honest, now.</h5>
-          <select id="selDatasetWeight" onchange="optionChanged(this.value)"></select>
+          <select id="selDatasetWeight" onchange="weightOptionChanged(this.value)"></select>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
       <div class="col-md-6">
         <div class="well">
           <h5>How many calories are you hoping to ingest today?</h5>
-          <select id="selDatasetCalories" onchange="optionChanged(this.value)"></select>
+          <select id="selDatasetCalories" onchange="calOptionChanged(this.value)"></select>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div id="lollipop"></div>
+      <div id="barDiv"></div>
     </div>
   </div>
 

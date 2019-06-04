@@ -15,9 +15,9 @@ pymysql.install_as_MySQLdb()
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
-rds_connection_string = f"{username}:{password}@127.0.0.1:3306"
+rds_connection_string = f"{username}:{password}@localhost:3306"
 engine = create_engine(f'mysql://{rds_connection_string}')
-conn = engine.connect()
+# conn = engine.connect()
 
 #################################################
 # Database Setup
@@ -25,7 +25,7 @@ conn = engine.connect()
 
 @app.route("/macros")
 def macrosData():
-	macrosStuff = pd.read_sql("SELECT * FROM latte_effect.menu_items ORDER BY Item", conn)
+	macrosStuff = pd.read_sql("SELECT * FROM latte_effect.menu_items ORDER BY Item", engine)
 	macrosStuff.set_index("Item",inplace = True)
 
 	macrosData = macrosStuff.to_dict(orient = "index")
@@ -34,7 +34,7 @@ def macrosData():
 
 @app.route("/exercise")
 def exerciseData():
-    exerciseStuff = pd.read_sql("SELECT * FROM exercise_raw.`Calories per Minute`", conn )
+    exerciseStuff = pd.read_sql("SELECT * FROM exercise_raw.`Calories per Minute`", engine )
     exerciseStuff.set_index("Exercise", inplace = True)
     # print(exerciseStuff.columns)
     exerciseData = exerciseStuff.to_dict(orient = "index")

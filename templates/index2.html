@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Redefining the Latte Factor</title>
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+  <script src=https://unpkg.com/tooltip.js></script>
+  <!-- <script src="bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="static/liquidFillGauge.js" language="JavaScript"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='liquidFillGuage.js') }}"> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Redefining the Latte Factor</h1>
+        <p class="heading-text">Is That Starbucks Drink Worth It?</p>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="btn-primary"  data-container="body" data-toggle="popover" data-placement="top" data-content="It takes about 45 minutes for the body to absorb caffeine, but another 4 hours to eliminate just half of it.">
+          Fun Fact!
+        </button>
+        
+        <button type="button" class="btn-primary" data-container="body" data-toggle="popover" data-placement="right" data-content="Caffeine can kill you! You may want to make your 29th cup your last.">
+          Another Fun Fact!
+        </button>
+        
+        <button type="button" class="btn-primary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Aromas are banned at Starbucks; no pastrami is allowed to be stored anywhere on the premeses.">
+          Best. Fact. Ever.
+        </button>
+        
+        <button type="button" class="btn-primary" data-container="body" data-toggle="popover" data-placement="left" data-content="There's a ski-thru Starbucks at Squaw Valley. #vacationgoals">
+          Are You Still Clicking?
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('data-toggle').popover()
+      })
+    </script>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="row top-buffer">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="well">
+            <h5>Select the Starbucks Menu Item That's Tempting You:</h5>
+            <select id="selDatasetItem" onchange="optionChanged(this.value)"></select>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div id="pie"></div>
+        </div> -->
+      </div> 
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <!-- <div class="well">
+            <h5>About how much do you weigh? Be honest, now.</h5>
+            <select id="selDatasetWeight" onchange="weightOptionChanged(this.value)"></select>
+          </div> -->
+          <div class="well">
+            <h5>How many calories are you hoping to ingest today?</h5>
+            <select id="selDatasetCalories" onchange="calOptionChanged(this.value)"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- <div class="col-md-6">
+        <div id="words-viz"></div>
+        <div id="calories-viz"></div> -->
+          <!-- <svg id="fillgauge" width="100%" height="350" onclick="gauge.update(NewValue());"></svg>
+            <script language="JavaScript">
+              var gauge= loadLiquidFillGauge("fillgauge", 23, config);
+              var config = liquidFillGaugeDefaultSettings();
+              config.circleColor = "#D4AB6A";
+              config.textColor = "#553300";
+              config.waveTextColor = "#805615";
+              config.waveColor = "#AA7D39";
+              config.circleThickness = 0.1;
+              config.circleFillGap = 0.2;
+              config.textVertPosition = 0.8;
+              config.waveAnimateTime = 2000;
+              config.waveHeight = 0.3;
+              config.waveCount = 1;
+            </script> -->
+      <!-- </div> -->
+
+      <div class="col-md-6">
+        <div id="pie"></div>
+        <div id="barDiv"></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-6">
+      <div id="barDiv"></div>
+    </div>
+  </div> -->
+
+  <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+  <!-- <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='../static/app.js') }}"></script>
+
+
+</body>
+
+</html>

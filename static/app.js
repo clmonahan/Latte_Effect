@@ -5,17 +5,17 @@
 // https://mathisonian.github.io/premonish/
 
 // Current weight dropdown
-var weight = ["100", "125", "150", "175", "200", "250", "300"];
+// var weight = ["100", "125", "150", "175", "200", "250", "300"];
 
-function init2w() {
-  var selector = d3.select('#selDatasetWeight')
-  weight.forEach(w => {
-    selector
-      .append("option")
-      .text(w)
-      .property("value", w);
-  });
-};
+// function init2w() {
+//   var selector = d3.select('#selDatasetWeight')
+//   weight.forEach(w => {
+//     selector
+//       .append("option")
+//       .text(w)
+//       .property("value", w);
+//   });
+// };
 
 
 // Daily calorie dropdown
@@ -35,8 +35,14 @@ function init3c(array) {
 };
 init3c(calories);
 
+var goal = document.getElementById('selDatasetCalories').value
+document.getElementById('selDatasetCalories').addEventListener('change', function () {
+  goal = this.value
+  console.log(goal)
+})
+
 function buildBar(sample) {
-  
+
   var goal = document.getElementById('selDatasetCalories').value
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
@@ -62,7 +68,7 @@ function buildBar(sample) {
       .attr("width", 300)//canvasWidth)
       .attr("height", 300);//canvasHeight);
 
-    var itemCal = parseInt(nutriValue) 
+    var itemCal = parseInt(nutriValue)
 
     var yLabel = [sample]
 
@@ -102,48 +108,92 @@ function buildBar(sample) {
   })
 }
 
-  // Calorie reader
-  function buildPie(sample) {
+// Calorie reader
+function buildPie(sample) {
 
 
-    // @TODO: Use `d3.json` to fetch the sample data for the plots
-    var chartsURL = "/macros";
-    d3.json(chartsURL).then(function (data) {
+  // @TODO: Use `d3.json` to fetch the sample data for the plots
+  var chartsURL = "/macros";
+  d3.json(chartsURL).then(function (data) {
 
-      var foodItem = data[sample]
-      var nutriKey = [];
-      var nutriValue = [];
+    var foodItem = data[sample]
+    var nutriKey = [];
+    var nutriValue = [];
 
-      //get macros data 
-      for (let nutriData in foodItem) {
-        if (nutriData != "Calories") {
-          nutriValue.push(foodItem[nutriData])
-          nutriKey.push(nutriData)
-        }
+    //get macros data 
+    for (let nutriData in foodItem) {
+      if (nutriData != "Calories") {
+        nutriValue.push(foodItem[nutriData])
+        nutriKey.push(nutriData)
       }
+    }
 
-      //  @TODO: Build a Pie Chart
-      var canvas = d3.select("#pie")
-        .append("svg:svg")
-        .attr("width", 300)//canvasWidth)
-        .attr("height", 300);//canvasHeight);
-
-
-      var pieData = [{
-        values: nutriValue.slice(0, 4),
-        labels: nutriKey.slice(0, 4),
-        type: 'pie',
-      }];
-
-      var pielayout = {
-        showlegend: true,
-      };
+    //  @TODO: Build a Pie Chart
+    var canvas = d3.select("#pie")
+      .append("svg:svg")
+      .attr("width", 300)//canvasWidth)
+      .attr("height", 300);//canvasHeight);
 
 
-      Plotly.newPlot('pie', pieData, pielayout);
+    var pieData = [{
+      values: nutriValue.slice(0, 4),
+      labels: nutriKey.slice(0, 4),
+      type: 'pie',
+    }];
 
-    })
-  }
+    var pielayout = {
+      showlegend: true,
+      title: 'Macros Breakdown for Selected Item',
+    };
+
+
+    Plotly.newPlot('pie', pieData, pielayout);
+
+  })
+}
+
+
+var chartsURL = "/exercise";
+function buildLollipop() {
+  
+
+  d3.json(chartsURL).then(function (data) {
+    random_items = []
+    values = Object.entries(data)
+    console.log(values)
+    counter = 0;
+    for (i = 0; i < 10; i++) {
+      var item = values[Math.floor(Math.random() * values.length)]
+      console.log(item)
+      random_items.push(item)
+    }
+
+    var trace1 = {
+      x: [100, 125, 150, 175, 200, 250, 300],
+      y: Object.values(random_items[1][1]),
+      mode: 'markers',
+      type: 'scatter'
+    };
+
+    var trace2 = {
+      x: [100, 125, 150, 175, 200, 250, 300],
+      y: Object.values(random_items[2][1]),
+      mode: 'markers',
+      type: 'scatter'
+    };
+
+    var trace3 = {
+      x: [100, 125, 150, 175, 200, 250, 300],
+      y: Object.values(random_items[3][1]),
+      mode: 'markers',
+      type: 'scatter'
+    };
+
+    var data = [trace1, trace2, trace3];
+
+    Plotly.newPlot('lollipop', data);
+});
+}
 
   function init() {
     // grab a reference to the dropdown select element "#item"
@@ -163,6 +213,7 @@ function buildBar(sample) {
       console.log(firstSample);
       buildPie(firstSample);
       buildBar(firstSample);
+      buildLollipop()
     });
   };
 
@@ -171,16 +222,8 @@ function buildBar(sample) {
     // console.log(newSample);
     buildPie(newSample);
     buildBar(newSample);
-  }
-
-  //weight dropdown changed
-  function weightOptionChanged() {
-  }
-
-  function calOptionChanged(newSample) {
-    buildBar(newSample);
+    buildLollipop()
   }
 
 
-init();
-init2w();
+  init();

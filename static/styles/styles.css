@@ -16,7 +16,7 @@
   text-indent: 400px;
 }
 
-/* .well {
+.well {
   border: 3px solid #163150;
   /* border: 2px solid rgb(28, 96, 62); */
   /* background-color: #ffffff; */
@@ -29,7 +29,7 @@
   /* transform: translate(-50%,-50%); */
   /* font-size: 40; */
   /* font-weight: bold; */
-/* } */ 
+} 
 
 /* .liquidFillGaugeText { 
   font-family: Helvetica; 
